@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('school_form_cbv',school_form_cbv.as_view(),name="school_form_cbv"),
     path('school_list_cbv',school_list_cbv.as_view(),name="school_list_cbv"),
+    path('school_list',school_list.as_view(),name="school_list"),
+    path('school_insert',school_insert.as_view(),name="school_insert"),
+    path('update/<pk>',school_update.as_view(),name="school_update"),
+    path('details/<pk>',displayschool.as_view(),name="displayschool")
 ]

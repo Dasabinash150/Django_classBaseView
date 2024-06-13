@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>School Details</h1>
+        <hr>
+        <h2>{{schoolobj.sname}}</h2>
+        <h2>{{schoolobj.sprincipal}}</h2>
+
+        <a href="{% url 'school_update' pk=schoolobj.pk %}">Update the school</a>
+
+        <h1>Student List</h1>
+
+        {% if schoolobj.students.exists %}
+        {% for std in schoolobj.students.all %}
+            <h2>{{std.name}}</h2>
+            {% endfor %}
+        {% else %}
+          <h2>No data found</h2>
+        {% endif %}
+           
+
+    </center>
+</body>
+
+</html>
